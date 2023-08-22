@@ -63,6 +63,16 @@ interface Book{
     Author :string;
     Year :number;
 }
+//11
+type Reader = {
+    Person: {
+        favoriteBook: Book;
+    };
+};
+
+
+
+
 
 
 
