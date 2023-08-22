@@ -57,7 +57,12 @@ const isMinor=(p:Person):boolean=>{
     }
     return true;
 }
-
+//10
+interface Book{
+    Title :string;
+    Author :string;
+    Year :number;
+}
 
 
 
