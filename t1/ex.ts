@@ -19,6 +19,10 @@ const typeNumber=(num:number):string=>{
     }
         return numType;
 }
+//4
+const lengthString=(str:string):number=>{
+        return str.length;
+}
 
 
 
