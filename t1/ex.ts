@@ -109,26 +109,41 @@ const rectangleCreator = (hight: number, width: number): number => {
 const isPalindrome = (str: string): boolean => {
   const newStr = str.split(" ").join("");
   for (let i = 0; i < newStr.length; i++) {
-    if (newStr[i] != newStr[newStr.length - i-1]) {
-    return false
+    if (newStr[i] != newStr[newStr.length - i - 1]) {
+      return false;
     }
   }
   return true;
 };
 //2.4
 const firstCharUpper = (str: string[]): string[] => {
-    let newStrArray = new Array<string>(str.length);
-    for (let i = 0; i < str.length; i++) {
-        newStrArray[i]=str[i].charAt(0).toUpperCase()+str[i].slice(1)
-    }
-    return newStrArray;
-  };
+  let newStrArray = new Array<string>(str.length);
+  for (let i = 0; i < str.length; i++) {
+    newStrArray[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return newStrArray;
+};
 //2.5
 const newIonicArray = (num: number[]): number[] => {
-    const newArray=[...new Set(num)]
-    return newArray;
+  const newArray = [...new Set(num)];
+  return newArray;
+};
+//2.6
+const editMen = (menObj: men): menInitial => {
+  const newMen: menInitial = {
+    firstInitial: menObj.firstName.charAt(0).toUpperCase(),
+    lastInitial: menObj.lastName.charAt(0).toUpperCase(),
   };
-
+  return newMen;
+};
+interface men {
+  firstName: string;
+  lastName: string;
+}
+interface menInitial {
+  firstInitial: string;
+  lastInitial: string;
+}
 
 
 
@@ -155,6 +170,8 @@ const newIonicArray = (num: number[]): number[] => {
 // console.log(isPalindrome("abccba"))
 //console.log(firstCharUpper(["sdfg","dfgg","aaaa"]))
 // console.log(newIonicArray([5,3,9,6,5,8,3]))
-
-
-
+const men1: men = {
+  firstName: "david",
+  lastName: "levi",
+};
+console.log(editMen(men1));
