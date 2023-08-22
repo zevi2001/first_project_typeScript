@@ -30,7 +30,16 @@ const createArray = (num: number): number[] => {
   }
   return array;
 };
-
+//6
+const highestInArray = (arr: number[]): number => {
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+};
 
 //console.log(topNumber(2,4))
 //printBigger(2,4)
