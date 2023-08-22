@@ -46,7 +46,10 @@ interface Person{
     age:number;
     isStudent:boolean;
 }
-
+//8
+const printPerson=(p:Person)=>{
+    console.log(p.name+" "+p.age+" "+p.isStudent)
+}
 
 
 
@@ -58,3 +61,10 @@ interface Person{
 //console.log(lengthString("ggg"))
 //console.log(createArray(5))
 //console.log(highestInArray([2, 3, 4, 8, 6, 9, 2]));
+// const myUser: Person = {
+//     name:"dd",
+//     age:23,
+//     isStudent:true,
+//     }
+// printPerson(myUser)
+
