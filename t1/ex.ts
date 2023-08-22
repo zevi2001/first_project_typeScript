@@ -50,6 +50,13 @@ interface Person{
 const printPerson=(p:Person)=>{
     console.log(p.name+" "+p.age+" "+p.isStudent)
 }
+//9
+const isMinor=(p:Person):boolean=>{
+    if(p.age<18){
+        return false
+    }
+    return true;
+}
 
 
 
@@ -67,4 +74,5 @@ const printPerson=(p:Person)=>{
 //     isStudent:true,
 //     }
 // printPerson(myUser)
+//console.log(isMinor(myUser))
 
