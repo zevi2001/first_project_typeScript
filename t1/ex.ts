@@ -10,6 +10,15 @@ const topNumber=(num1:number,num2:number):number=>{
 function printBigger (num1:number,num2:number):void{
     num1 > num2 ?console.log (num1) : console.log(num2);
 }
+//3
+const typeNumber=(num:number):string=>{
+    let numType="Odd"
+    if(num%2==0){
+        numType="dual"
+        return numType;
+    }
+        return numType;
+}
 
 
 
