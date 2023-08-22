@@ -123,7 +123,11 @@ const firstCharUpper = (str: string[]): string[] => {
     }
     return newStrArray;
   };
-
+//2.5
+const newIonicArray = (num: number[]): number[] => {
+    const newArray=[...new Set(num)]
+    return newArray;
+  };
 
 
 
@@ -149,5 +153,8 @@ const firstCharUpper = (str: string[]): string[] => {
 //console.log(sumEvenInArray([2,4,6,5,7]))
 // console.log(rectangleCreator(5,3))
 // console.log(isPalindrome("abccba"))
-console.log(firstCharUpper(["sdfg","dfgg","aaaa"]))
+//console.log(firstCharUpper(["sdfg","dfgg","aaaa"]))
+// console.log(newIonicArray([5,3,9,6,5,8,3]))
+
+
 
