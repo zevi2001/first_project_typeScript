@@ -69,7 +69,7 @@ type Reader = Person & {
 };
 ///12
 const printOldestReader = (read: Reader[]) => {
-  let up = read[0].age
+  let up = read[0].age;
   let index = 0;
   for (let i: number = 0; i < read.length; i++) {
     if (read[i].age > up) {
@@ -81,28 +81,30 @@ const printOldestReader = (read: Reader[]) => {
 };
 //13
 const printOldestBook = (read: Reader[]) => {
-    let up = read[0].favoriteBook.Year
-    let index = 0;
-    for (let i: number = 0; i < read.length; i++) {
-      if (read[i].favoriteBook.Year > up) {
-        up = read[i].favoriteBook.Year;
-        index = i;
-      }
+  let up = read[0].favoriteBook.Year;
+  let index = 0;
+  for (let i: number = 0; i < read.length; i++) {
+    if (read[i].favoriteBook.Year > up) {
+      up = read[i].favoriteBook.Year;
+      index = i;
     }
-    return read[index].favoriteBook;
-  };
+  }
+  return read[index].favoriteBook;
+};
 //2.1
 const sumEvenInArray = (arr: number[]): number => {
-    let sum =0;
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i] %2==0) {
-        sum+= arr[i];
-      }
+  let sum = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] % 2 == 0) {
+      sum += arr[i];
     }
-    return sum;
-  };
-  
-
+  }
+  return sum;
+};
+//2.1
+const rectangleCreator = (hight: number, width: number): number => {
+  return hight * width;
+};
 
 
 
@@ -113,15 +115,17 @@ const sumEvenInArray = (arr: number[]): number => {
 //console.log(lengthString("ggg"))
 //console.log(createArray(5))
 //console.log(highestInArray([2, 3, 4, 8, 6, 9, 2]));
-const myUser: Person = {
-  name: "dd",
-  age: 23,
-  isStudent: true,
-};
-const myBook: Book = {
-  Title: "aaa",
-  Author: "bbb",
-  Year: 1998,
-};
+// const myUser: Person = {
+//   name: "dd",
+//   age: 23,
+//   isStudent: true,
+// };
+// const myBook: Book = {
+//   Title: "aaa",
+//   Author: "bbb",
+//   Year: 1998,
+// };
 // printPerson(myUser)
 //console.log(isMinor(myUser))
+//console.log(sumEvenInArray([2,4,6,5,7]))
+// console.log(rectangleCreator(5,3))
