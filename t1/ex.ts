@@ -144,6 +144,34 @@ interface menInitial {
   firstInitial: string;
   lastInitial: string;
 }
+//2.7
+interface menAge {
+  name: string;
+  age: number;
+}
+const newMen1: menAge = {
+    name: "fff",
+    age: 89,
+  };
+  const newMen2: menAge = {
+    name: "ooo",
+    age: 75,
+  };
+  const newMen3: menAge = {
+    name: "ppp",
+    age: 80,
+  };
+  const ageAverage = (menAgeObj: menAge[]): number => {
+    let sum=0;
+    for (let i = 0; i < menAgeObj.length; i++) {
+        sum+=menAgeObj[i].age;
+    }
+    return sum/menAgeObj.length;
+  };
+
+
+
+
 
 
 
@@ -170,8 +198,11 @@ interface menInitial {
 // console.log(isPalindrome("abccba"))
 //console.log(firstCharUpper(["sdfg","dfgg","aaaa"]))
 // console.log(newIonicArray([5,3,9,6,5,8,3]))
-const men1: men = {
-  firstName: "david",
-  lastName: "levi",
-};
-console.log(editMen(men1));
+// const men1: men = {
+//   firstName: "david",
+//   lastName: "levi",
+// };
+// console.log(editMen(men1));
+// console.log(ageAverage([newMen1,newMen2,newMen3]))
+
+
