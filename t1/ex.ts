@@ -101,9 +101,19 @@ const sumEvenInArray = (arr: number[]): number => {
   }
   return sum;
 };
-//2.1
+//2.2
 const rectangleCreator = (hight: number, width: number): number => {
   return hight * width;
+};
+//2.3
+const isPalindrome = (str: string): boolean => {
+  const newStr = str.split(" ").join("");
+  for (let i = 0; i < newStr.length; i++) {
+    if (newStr[i] != newStr[newStr.length - i-1]) {
+    return false
+    }
+  }
+  return true;
 };
 
 
@@ -129,3 +139,4 @@ const rectangleCreator = (hight: number, width: number): number => {
 //console.log(isMinor(myUser))
 //console.log(sumEvenInArray([2,4,6,5,7]))
 // console.log(rectangleCreator(5,3))
+console.log(isPalindrome("abccba"))
