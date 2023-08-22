@@ -115,6 +115,15 @@ const isPalindrome = (str: string): boolean => {
   }
   return true;
 };
+//2.4
+const firstCharUpper = (str: string[]): string[] => {
+    let newStrArray = new Array<string>(str.length);
+    for (let i = 0; i < str.length; i++) {
+        newStrArray[i]=str[i].charAt(0).toUpperCase()+str[i].slice(1)
+    }
+    return newStrArray;
+  };
+
 
 
 
@@ -139,4 +148,6 @@ const isPalindrome = (str: string): boolean => {
 //console.log(isMinor(myUser))
 //console.log(sumEvenInArray([2,4,6,5,7]))
 // console.log(rectangleCreator(5,3))
-console.log(isPalindrome("abccba"))
+// console.log(isPalindrome("abccba"))
+console.log(firstCharUpper(["sdfg","dfgg","aaaa"]))
+
