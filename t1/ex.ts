@@ -41,40 +41,44 @@ const highestInArray = (arr: number[]): number => {
   return max;
 };
 //7
-interface Person{
-    name:string;
-    age:number;
-    isStudent:boolean;
+interface Person {
+  name: string;
+  age: number;
+  isStudent: boolean;
 }
 //8
-const printPerson=(p:Person)=>{
-    console.log(p.name+" "+p.age+" "+p.isStudent)
-}
+const printPerson = (p: Person) => {
+  console.log(p.name + " " + p.age + " " + p.isStudent);
+};
 //9
-const isMinor=(p:Person):boolean=>{
-    if(p.age<18){
-        return false
-    }
-    return true;
-}
+const isMinor = (p: Person): boolean => {
+  if (p.age < 18) {
+    return false;
+  }
+  return true;
+};
 //10
-interface Book{
-    Title :string;
-    Author :string;
-    Year :number;
+interface Book {
+  Title: string;
+  Author: string;
+  Year: number;
 }
 //11
-type Reader = {
-    Person: {
-        favoriteBook: Book;
-    };
+type Reader = Person & {
+  favoriteBook: Book;
 };
-
-
-
-
-
-
+///12
+const printOldestReader = (read: Reader[]) => {
+  let up = read[0].age
+  let index = 0;
+  for (let i: number = 0; i < read.length; i++) {
+    if (read[i].age > up) {
+      up = read[i].age;
+      index = i;
+    }
+  }
+  return read[index];
+};
 
 
 //console.log(topNumber(2,4))
@@ -83,11 +87,15 @@ type Reader = {
 //console.log(lengthString("ggg"))
 //console.log(createArray(5))
 //console.log(highestInArray([2, 3, 4, 8, 6, 9, 2]));
-// const myUser: Person = {
-//     name:"dd",
-//     age:23,
-//     isStudent:true,
-//     }
+const myUser: Person = {
+  name: "dd",
+  age: 23,
+  isStudent: true,
+};
+const myBook: Book = {
+  Title: "aaa",
+  Author: "bbb",
+  Year: 1998,
+};
 // printPerson(myUser)
 //console.log(isMinor(myUser))
-
