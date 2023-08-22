@@ -40,6 +40,17 @@ const highestInArray = (arr: number[]): number => {
   }
   return max;
 };
+//7
+interface Person{
+    name:string;
+    age:number;
+    isStudent:boolean;
+}
+
+
+
+
+
 
 //console.log(topNumber(2,4))
 //printBigger(2,4)
