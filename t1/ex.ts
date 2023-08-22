@@ -91,6 +91,9 @@ const printOldestBook = (read: Reader[]) => {
     }
     return read[index].favoriteBook;
   };
+//2.1
+
+
 
 //console.log(topNumber(2,4))
 //printBigger(2,4)
