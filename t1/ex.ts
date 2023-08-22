@@ -92,6 +92,18 @@ const printOldestBook = (read: Reader[]) => {
     return read[index].favoriteBook;
   };
 //2.1
+const sumEvenInArray = (arr: number[]): number => {
+    let sum =0;
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] %2==0) {
+        sum+= arr[i];
+      }
+    }
+    return sum;
+  };
+  
+
+
 
 
 
