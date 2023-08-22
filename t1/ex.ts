@@ -79,7 +79,18 @@ const printOldestReader = (read: Reader[]) => {
   }
   return read[index];
 };
-
+//13
+const printOldestBook = (read: Reader[]) => {
+    let up = read[0].favoriteBook.Year
+    let index = 0;
+    for (let i: number = 0; i < read.length; i++) {
+      if (read[i].favoriteBook.Year > up) {
+        up = read[i].favoriteBook.Year;
+        index = i;
+      }
+    }
+    return read[index].favoriteBook;
+  };
 
 //console.log(topNumber(2,4))
 //printBigger(2,4)
