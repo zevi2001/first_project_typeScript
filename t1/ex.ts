@@ -150,24 +150,47 @@ interface menAge {
   age: number;
 }
 const newMen1: menAge = {
-    name: "fff",
-    age: 89,
+  name: "fff",
+  age: 89,
+};
+const newMen2: menAge = {
+  name: "ooo",
+  age: 75,
+};
+const newMen3: menAge = {
+  name: "ppp",
+  age: 80,
+};
+const ageAverage = (menAgeObj: menAge[]): number => {
+  let sum = 0;
+  for (let i = 0; i < menAgeObj.length; i++) {
+    sum += menAgeObj[i].age;
+  }
+  return sum / menAgeObj.length;
+};
+//2.8
+const maxAndMinValue = (num: number[]): minMax => {
+  const newMinMax: minMax = {
+    min: num[0],
+    max: num[0],
   };
-  const newMen2: menAge = {
-    name: "ooo",
-    age: 75,
-  };
-  const newMen3: menAge = {
-    name: "ppp",
-    age: 80,
-  };
-  const ageAverage = (menAgeObj: menAge[]): number => {
-    let sum=0;
-    for (let i = 0; i < menAgeObj.length; i++) {
-        sum+=menAgeObj[i].age;
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] > newMinMax.max) {
+      newMinMax.max = num[i];
     }
-    return sum/menAgeObj.length;
-  };
+    if (num[i] < newMinMax.min) {
+      newMinMax.min = num[i];
+    }
+  }
+  return newMinMax;
+};
+interface minMax {
+  min: number;
+  max: number;
+}
+
+
+
 
 
 
@@ -204,5 +227,4 @@ const newMen1: menAge = {
 // };
 // console.log(editMen(men1));
 // console.log(ageAverage([newMen1,newMen2,newMen3]))
-
-
+// console.log(maxAndMinValue([2,3,5,6,4,9,8,7,41]))
