@@ -240,99 +240,106 @@
 // console.log(maxAndMinValue([2,3,5,6,4,9,8,7,41]))
 // reverseArray([25, "kkk", 85, false]);
 
-
-
-
 // Step 1: נתון לכם אינאם - אתם רשאים להפוך אותו למשהו אחר
 export enum ItemType {
-    Book = 'book',
-    DVD = 'dvd',
-  }
-  
-  // Step 2:  ספר צריך להכיל שדות
-  interface Book {
-  type:ItemType.Book;
-   title:string;
-   author:string;
-  }
-  interface DVD {
-  type:ItemType.DVD
-  title:string;
-  duration:number;
-  }
-  
-  // Test data
-  const libraryItems: (Book | DVD)[] = [
-    { type: ItemType.Book, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
-    { type: ItemType.DVD, title: 'Inception', duration: 148 },
-    { type: ItemType.Book, title: 'To Kill a Mockingbird', author: 'Harper Lee' },
-    { type: ItemType.DVD, title: 'Avatar', duration: 162 },
-    { type: ItemType.Book, title: 'Go Set a Watchman', author: 'Harper Lee' },
-  ];
-  
-  // Step 3: פונקציה מקבלת מערך של פריטים, ופונקצית פילטור. ומחזירה מערך מפולטר של פריטים
-  function filterItems<T>(items: T[], filterFn: (item: T) => boolean): T[] {
-    const newArray: T[] = items.filter((item) => filterFn(item));
-    return newArray;
-  }
-  // Step 4: הפונקציה מקבלת מערך של פריטים ומדפיסה את כל המידע הרלוונטי לגבי כל פריט
-  function printItemsData<T extends Book | DVD>(items: T[]) {
-    for (const item of items) {
-      if (item.type === ItemType.Book) {
-        console.log(`Book - Title: ${item.title}, Author: ${item.author}`);
-      } else if (item.type === ItemType.DVD) {
-        console.log(`DVD - Title: ${item.title}, Duration: ${item.duration}`);
-      }
-    }
-  }
-  // Step 5:  
-  function printAllData<T extends Book|DVD>(items:T[]){
-    for (const item of items) {
-        if (item.type === ItemType.Book) {
-            console.log(`type : ${item.type},Book - Title: ${item.title}, Author: ${item.author}`);
-          } else if (item.type === ItemType.DVD) {
-            console.log(`type : ${item.type},DVD - Title: ${item.title}, Duration: ${item.duration}`);
-          }
-    }
-  }   
-  //printAllData(libraryItems)
-  // Step 6: ממשו את פונקצית הפילטור כך שתחזיר סרטים ארוכים משעתיים והדפיסו את המערך 
-  const filteredDVDs = filterItems(libraryItems, (item) => item.type === ItemType.DVD&&item.duration>120);
-console.log(filteredDVDs)
-  // Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של  
-const filterByAuthor=filterItems(libraryItems,(item)=>item.type===ItemType.Book&&item.author==="Harper Lee")
-// console.log(filterByAuthor)
+  Book = "book",
+  DVD = "dvd",
+}
 
+// Step 2:  ספר צריך להכיל שדות
+interface Book {
+  type: ItemType.Book;
+  title: string;
+  author: string;
+}
+interface DVD {
+  type: ItemType.DVD;
+  title: string;
+  duration: number;
+}
+
+// Test data
+const libraryItems: (Book | DVD)[] = [
+  {
+    type: ItemType.Book,
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+  },
+  { type: ItemType.DVD, title: "Inception", duration: 148 },
+  { type: ItemType.Book, title: "To Kill a Mockingbird", author: "Harper Lee" },
+  { type: ItemType.DVD, title: "Avatar", duration: 162 },
+  { type: ItemType.Book, title: "Go Set a Watchman", author: "Harper Lee" },
+];
+
+// Step 3: פונקציה מקבלת מערך של פריטים, ופונקצית פילטור. ומחזירה מערך מפולטר של פריטים
+function filterItems<T>(items: T[], filterFn: (item: T) => boolean): T[] {
+  const newArray: T[] = items.filter((item) => filterFn(item));
+  return newArray;
+}
+// Step 4: הפונקציה מקבלת מערך של פריטים ומדפיסה את כל המידע הרלוונטי לגבי כל פריט
+function printItemsData<T extends Book | DVD>(items: T[]) {
+  for (const item of items) {
+    if (item.type === ItemType.Book) {
+      console.log(`Book - Title: ${item.title}, Author: ${item.author}`);
+    } else if (item.type === ItemType.DVD) {
+      console.log(`DVD - Title: ${item.title}, Duration: ${item.duration}`);
+    }
+  }
+}
+// Step 5:
+function printAllData<T extends Book | DVD>(items: T[]) {
+  for (const item of items) {
+    if (item.type === ItemType.Book) {
+      console.log(
+        `type : ${item.type},Book - Title: ${item.title}, Author: ${item.author}`
+      );
+    } else if (item.type === ItemType.DVD) {
+      console.log(
+        `type : ${item.type},DVD - Title: ${item.title}, Duration: ${item.duration}`
+      );
+    }
+  }
+}
+//printAllData(libraryItems)
+// Step 6: ממשו את פונקצית הפילטור כך שתחזיר סרטים ארוכים משעתיים והדפיסו את המערך
+const filteredDVDs = filterItems(
+  libraryItems,
+  (item) => item.type === ItemType.DVD && item.duration > 120
+);
+console.log(filteredDVDs);
+// Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של
+const filterByAuthor = filterItems(
+  libraryItems,
+  (item) => item.type === ItemType.Book && item.author === "Harper Lee"
+);
+// console.log(filterByAuthor)
 
 // 2.1
 //1
 // צור פונקציה גנרית ותנו לה שם מתאים שלוקחת שני ארגומנטים מסוגים שונים ומחזירה מערך המכיל את שני הארגומנטים.
-// תפקיד הפונקציה, ליצור צמד 
+// תפקיד הפונקציה, ליצור צמד
 // ['asd',3]
-function towType<T,N>(v1:T,v2:N){
-    return[v1,v2]
-    }
-    // console.log(towType("zevi",31))
-    
+function towType<T, N>(v1: T, v2: N) {
+  return [v1, v2];
+}
+// console.log(towType("zevi",31))
+//2.2
+function dataByKey<T, K extends keyof T>(obj: T, kay: K) {
+  return obj[kay];
+}
+// const pers = {
+//     name: 'John',
+//     age: 30,
+//     city: 'New York',
+//   };
+// console.log(dataByKey(pers,'city'))
 
 //מתקדם
-//צור פונקציה גנרית שמקבלת מערך של אובייקטים ואובייקט כארגומנטים. הפונקציה תוסיף את האובייקט שהתקבל לכל איבר במערך 
-// עליכם לקרוא על ולהשתמש ב: Record  
-
+//צור פונקציה גנרית שמקבלת מערך של אובייקטים ואובייקט כארגומנטים. הפונקציה תוסיף את האובייקט שהתקבל לכל איבר במערך
+// עליכם לקרוא על ולהשתמש ב: Record
 
 // כתבו פונקציה שמקבלת אובייקט ושם שדה(מפתח).  הפונקציה תחזיר אובייקט חדש בלי המפתח
 // קראו על Omit
 
-
 // כתוב פונקציה שמקבלת אובייקט,מפתח וערך. הפונקציה תחזיר אובייקט חדש עם המפתח והערך שהוזנו לה כשדה חדש באובייקט שהוזן לה
 // השתמשו ב &
-
-
-
-
-
-
-
-
-
-
