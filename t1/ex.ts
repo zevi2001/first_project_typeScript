@@ -185,6 +185,7 @@ const maxAndMinValue = (num: number[]): minMax => {
   return newMinMax;
 };
 interface minMax {
+
   min: number;
   max: number;
 }
@@ -206,6 +207,9 @@ const reverseArray = (num: unknown[]) => {
     }
   }
 };
+
+
+
 
 //console.log(topNumber(2,4))
 //printBigger(2,4)
@@ -237,4 +241,4 @@ const reverseArray = (num: unknown[]) => {
 // console.log(editMen(men1));
 // console.log(ageAverage([newMen1,newMen2,newMen3]))
 // console.log(maxAndMinValue([2,3,5,6,4,9,8,7,41]))
-reverseArray([25, "kkk", 85, false]);
+// reverseArray([25, "kkk", 85, false]);
