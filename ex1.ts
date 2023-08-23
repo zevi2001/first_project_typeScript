@@ -6,15 +6,14 @@ export enum ItemType {
 
 // Step 2:  ספר צריך להכיל שדות
 interface Book {
-// type
-// title
-// author  
+type:ItemType.Book;
+ title:string;
+ author:string;
 }
-
 interface DVD {
-  // type
-  // title
-  // duration
+type:ItemType.DVD
+title:string;
+duration:string;
 }
 
 // Step 3: פונקציה מקבלת מערך של פריטים, ופונקצית פילטור. ומחזירה מערך מפולטר של פריטים
