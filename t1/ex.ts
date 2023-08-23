@@ -306,7 +306,7 @@ const filteredDVDs = filterItems(
   libraryItems,
   (item) => item.type === ItemType.DVD && item.duration > 120
 );
-console.log(filteredDVDs);
+//console.log(filteredDVDs);
 // Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של
 const filterByAuthor = filterItems(
   libraryItems,
@@ -350,11 +350,6 @@ function dataByKey<T, K extends keyof T>(obj: T, kay: K) {
 // כתוב פונקציה שמקבלת אובייקט,מפתח וערך. הפונקציה תחזיר אובייקט חדש עם המפתח והערך שהוזנו לה כשדה חדש באובייקט שהוזן לה
 // השתמשו ב &
 
-
-
-
-
-
 //game
 
 // בנו תכנית שמדמה את המשחק אבן נייר ומספריים
@@ -364,7 +359,7 @@ function dataByKey<T, K extends keyof T>(obj: T, kay: K) {
 // דגשים
 // שחקן  יכול לבחור בין אבן נייר ומספרים בלבד! אך שחקן יכול שלא תהיה לו בחירה
 // התכנית יכולה להחזיר את המחרוזות
-// 'tie', 'player1', 'player2' 
+// 'tie', 'player1', 'player2'
 // התשובה חייבת להכיל
 // ENUM
 // type/interface
@@ -372,19 +367,30 @@ function dataByKey<T, K extends keyof T>(obj: T, kay: K) {
 // במידה ולשחקן אין בחירה הצג זרקו שגיאה
 // ממשו את הפונקציה הוסיפו טיפוסים לפרמטרים ולערך החזרה של הפונקציה
 
+enum options {
+  rock = "rock",
+  paper = "paper",
+  scissors = "scissors",
+}
+interface player {
+  choice: options;
+}
+type result = "tie" | "player1" | "player2";
 
-
-// function playGame(player1, player2) {
-
-// }
-
-// const play = playGame(player1, player2);
-// console.log(play);
-//Output: player1 or player2 or tie
-
-
-
-
-
-
-
+function playGame(player1: player, player2: player): result {
+  if (player1.choice == player2.choice) {
+    return "tie";
+  } else if (
+    (player1.choice === options.rock && player2.choice === options.scissors) ||
+    (player1.choice === options.paper && player2.choice === options.rock) ||
+    (player1.choice === options.scissors && player2.choice === options.paper)
+  ) {
+    return "player1";
+  }
+  return "player2";
+}
+const player1:player={choice:options.paper}
+const player2:player={choice:options.paper}
+const play = playGame(player1, player2);
+console.log(play);
+// Output: player1 or player2 or tie
