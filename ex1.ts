@@ -13,7 +13,7 @@ type:ItemType.Book;
 interface DVD {
 type:ItemType.DVD
 title:string;
-duration:string;
+duration:number;
 }
 
 // Test data
@@ -32,9 +32,17 @@ function filterItems<T>(items: T[], filterFn: (item: T) => boolean): T[] {
 }
 
 // Step 4: הפונקציה מקבלת מערך של פריטים ומדפיסה את כל המידע הרלוונטי לגבי כל פריט
-function printItemsData(items) {
-  // Your code here
+function printItemsData<T extends Book | DVD>(items: T[]) {
+  for (const item of items) {
+    console.log("ggg")
+    if (item.type === ItemType.Book) {
+      console.log(`Book - Title: ${item.title}, Author: ${item.author}`);
+    } else if (item.type === ItemType.DVD) {
+      console.log(`DVD - Title: ${item.title}, Duration: ${item.duration}`);
+    }
+  }
 }
+printItemsData(libraryItems)
 
 
 
