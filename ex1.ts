@@ -16,16 +16,6 @@ title:string;
 duration:string;
 }
 
-// Step 3: פונקציה מקבלת מערך של פריטים, ופונקצית פילטור. ומחזירה מערך מפולטר של פריטים
-function filterItems(items, filterFn) {
-  // Your code here
-}
-
-// Step 4: הפונקציה מקבלת מערך של פריטים ומדפיסה את כל המידע הרלוונטי לגבי כל פריט
-function printItemsData(items) {
-  // Your code here
-}
-
 // Test data
 const libraryItems: (Book | DVD)[] = [
   { type: ItemType.Book, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
@@ -34,6 +24,19 @@ const libraryItems: (Book | DVD)[] = [
   { type: ItemType.DVD, title: 'Avatar', duration: 162 },
   { type: ItemType.Book, title: 'Go Set a Watchman', author: 'Harper Lee' },
 ];
+
+// Step 3: פונקציה מקבלת מערך של פריטים, ופונקצית פילטור. ומחזירה מערך מפולטר של פריטים
+function filterItems<T>(items: T[], filterFn: (item: T) => boolean): T[] {
+  const newArray: T[] = items.filter((item) => filterFn(item));
+  return newArray;
+}
+
+// Step 4: הפונקציה מקבלת מערך של פריטים ומדפיסה את כל המידע הרלוונטי לגבי כל פריט
+function printItemsData(items) {
+  // Your code here
+}
+
+
 
 // Step 5:  הדפיסו את כל המידע הנתון 
 
