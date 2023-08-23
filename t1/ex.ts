@@ -285,7 +285,6 @@ export enum ItemType {
       }
     }
   }
-  
   // Step 5:  
   function printAllData<T extends Book|DVD>(items:T[]){
     for (const item of items) {
@@ -297,14 +296,39 @@ export enum ItemType {
     }
   }   
   //printAllData(libraryItems)
-
   // Step 6: ממשו את פונקצית הפילטור כך שתחזיר סרטים ארוכים משעתיים והדפיסו את המערך 
   const filteredDVDs = filterItems(libraryItems, (item) => item.type === ItemType.DVD&&item.duration>120);
-//console.log(filteredDVDs)
+console.log(filteredDVDs)
   // Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של  
-
 const filterByAuthor=filterItems(libraryItems,(item)=>item.type===ItemType.Book&&item.author==="Harper Lee")
-console.log(filterByAuthor)
+// console.log(filterByAuthor)
+
+
+// 2.1
+//1
+// צור פונקציה גנרית ותנו לה שם מתאים שלוקחת שני ארגומנטים מסוגים שונים ומחזירה מערך המכיל את שני הארגומנטים.
+// תפקיד הפונקציה, ליצור צמד 
+// ['asd',3]
+function towType<T,N>(v1:T,v2:N){
+    return[v1,v2]
+    }
+    // console.log(towType("zevi",31))
+    
+
+//מתקדם
+//צור פונקציה גנרית שמקבלת מערך של אובייקטים ואובייקט כארגומנטים. הפונקציה תוסיף את האובייקט שהתקבל לכל איבר במערך 
+// עליכם לקרוא על ולהשתמש ב: Record  
+
+
+// כתבו פונקציה שמקבלת אובייקט ושם שדה(מפתח).  הפונקציה תחזיר אובייקט חדש בלי המפתח
+// קראו על Omit
+
+
+// כתוב פונקציה שמקבלת אובייקט,מפתח וערך. הפונקציה תחזיר אובייקט חדש עם המפתח והערך שהוזנו לה כשדה חדש באובייקט שהוזן לה
+// השתמשו ב &
+
+
+
 
 
 
