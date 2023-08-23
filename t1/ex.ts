@@ -301,6 +301,11 @@ export enum ItemType {
   // Step 6: ממשו את פונקצית הפילטור כך שתחזיר סרטים ארוכים משעתיים והדפיסו את המערך 
   const filteredDVDs = filterItems(libraryItems, (item) => item.type === ItemType.DVD&&item.duration>120);
 //console.log(filteredDVDs)
+  // Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של  
+
+const filterByAuthor=filterItems(libraryItems,(item)=>item.type===ItemType.Book&&item.author==="Harper Lee")
+console.log(filterByAuthor)
+
 
 
 
