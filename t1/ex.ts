@@ -282,16 +282,26 @@ export enum ItemType {
       if (item.type === ItemType.Book) {
         console.log(`Book - Title: ${item.title}, Author: ${item.author}`);
       } else if (item.type === ItemType.DVD) {
-        console.log(`DVD - Title: ${item.title}, Duration: ${item.duration}`);
+        console.log(`DVD - Title: ${item.title.}, Duration: ${item.duration}`);
       }
     }
   }
-  printItemsData(libraryItems)
-  
-  
+  //printItemsData(libraryItems)
   
   // Step 5:  הדפיסו את כל המידע הנתון 
-  
+  function printAllData<T extends Book|DVD>(items:T[]){
+    for (const item of items) {
+        if (item.type === ItemType.Book) {
+            console.log(`type : ${item.type},Book - Title: ${item.title}, Author: ${item.author}`);
+          } else if (item.type === ItemType.DVD) {
+            console.log(`type : ${item.type},DVD - Title: ${item.title}, Duration: ${item.duration}`);
+          }
+    }
+  }   
+  printAllData(libraryItems)
+
+
+
   // Step 6: ממשו את פונקצית הפילטור כך שתחזיר סרטים ארוכים משעתיים והדפיסו את המערך 
   
   // Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של  
