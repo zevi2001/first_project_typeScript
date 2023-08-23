@@ -275,20 +275,18 @@ export enum ItemType {
     const newArray: T[] = items.filter((item) => filterFn(item));
     return newArray;
   }
-  
   // Step 4: הפונקציה מקבלת מערך של פריטים ומדפיסה את כל המידע הרלוונטי לגבי כל פריט
   function printItemsData<T extends Book | DVD>(items: T[]) {
     for (const item of items) {
       if (item.type === ItemType.Book) {
         console.log(`Book - Title: ${item.title}, Author: ${item.author}`);
       } else if (item.type === ItemType.DVD) {
-        console.log(`DVD - Title: ${item.title.}, Duration: ${item.duration}`);
+        console.log(`DVD - Title: ${item.title}, Duration: ${item.duration}`);
       }
     }
   }
-  //printItemsData(libraryItems)
   
-  // Step 5:  הדפיסו את כל המידע הנתון 
+  // Step 5:  
   function printAllData<T extends Book|DVD>(items:T[]){
     for (const item of items) {
         if (item.type === ItemType.Book) {
@@ -298,16 +296,11 @@ export enum ItemType {
           }
     }
   }   
-  printAllData(libraryItems)
-
-
+  //printAllData(libraryItems)
 
   // Step 6: ממשו את פונקצית הפילטור כך שתחזיר סרטים ארוכים משעתיים והדפיסו את המערך 
-  
-  // Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של  
-
-
-
+  const filteredDVDs = filterItems(libraryItems, (item) => item.type === ItemType.DVD&&item.duration>120);
+//console.log(filteredDVDs)
 
 
 
